@@ -1,3 +1,27 @@
+# CIQ Notes
+
+I decided to try this kata to try my hand at some refactoring. The general approach I've taken so far is to:
+1. Write some acceptance/characterization tests around the kata - in this case I wrote two tests around each general item (for 10 tests)
+2. Write one large acceptance/characterization test around the items for day 0
+3. Write one large acceptance/characterization test around the items for day 1
+
+Start to implement the feature (add conjured items that degrade in quality 2x as fast)
+1. Add comments to what the code is currently doing to the top level if statements
+2. For the first if statement, seperate out the internals as a method, as I cannot reliably seperate the else portion.
+3. Delete unnecessary comments that are covered by method names
+4. "Twice as fast" - as what? To me this means twice as fast as elixer or vest, which means -2 per day
+5. Add a test for a conjured item - Conjured Beer of Might, Sellin: 5, Quality: 25
+6. Refactor some more so that the change is easy
+7. Pass the test
+
+Some takeaways:
+1. Lots of tests at the start, although it seems labour intensive and a waste of time, are what give you confidence that you aren't changing existing behaviour
+2. Some upfront refactoring/commenting has to be done to understand the current code
+3. Write the test that you want the new feature to pass
+4. Some additional refactoring has to be done to make (3) suitably easy and comfortable
+5. Make the feature change
+6. Can reduce duplication again here/make it cleaner but really the kata is complete?
+
 # Gilded Rose Refactoring Kata
 
 This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/).
