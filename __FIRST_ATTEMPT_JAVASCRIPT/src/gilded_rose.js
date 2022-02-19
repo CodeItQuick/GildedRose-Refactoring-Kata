@@ -14,14 +14,12 @@ class Shop {
     updateQuality() {
         // loop through all the items in the shop list
         for (var i = 0; i < this.items.length; i++) {
-            // for items that are not brie, backstage passes, or sulfuras, degrade the quality by one
-            const notBrieAndPasses = this.items[i].name == '+5 Dexterity Vest' || this.items[i].name == 'Elixir of the Mongoose';
+            const isVestOrElixer = this.items[i].name == '+5 Dexterity Vest' || this.items[i].name == 'Elixir of the Mongoose';
             const isBrieAndPasses = this.items[i].name == 'Aged Brie' ||
                 this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert' ||
                 this.items[i].name == 'Sulfuras, Hand of Ragnaros';
-            if (notBrieAndPasses) {
+            if (isVestOrElixer) {
                 this.degradeQualityElixerOrVest(i);
-                // for items that are brie, backstage passes, or sulfuras
             }
             if (isBrieAndPasses) {
                 this.degradeQualityBriePassesOrSulfuras(i);
