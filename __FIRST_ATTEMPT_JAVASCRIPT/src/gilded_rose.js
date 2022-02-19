@@ -15,13 +15,13 @@ class Shop {
         // loop through all the items in the shop list
         for (var i = 0; i < this.items.length; i++) {
             const isVestOrElixer = this.items[i].name == '+5 Dexterity Vest' || this.items[i].name == 'Elixir of the Mongoose';
-            const isBrieAndPasses = this.items[i].name == 'Aged Brie' ||
-                this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert' ||
-                this.items[i].name == 'Sulfuras, Hand of Ragnaros';
             if (isVestOrElixer) {
                 this.degradeQualityElixerOrVest(i);
             }
-            if (isBrieAndPasses) {
+            const isBrieOrPassesOrSulfuras = this.items[i].name == 'Aged Brie' ||
+                this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert' ||
+                this.items[i].name == 'Sulfuras, Hand of Ragnaros';
+            if (isBrieOrPassesOrSulfuras) {
                 this.degradeQualityBriePassesOrSulfuras(i);
             }
             if (this.items[i].name === 'Conjured Beer of Might') {
