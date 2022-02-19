@@ -1,5 +1,7 @@
 # CIQ Notes
 
+Solution is in __FIRST_ATTEMPT_JAVASCRIPT folder, and is written in javascript.
+
 I decided to try this kata to try my hand at some refactoring. The general approach I've taken so far is to:
 1. Write some acceptance/characterization tests around the kata - in this case I wrote two tests around each general item (for 10 tests)
 2. Write one large acceptance/characterization test around the items for day 0
