@@ -1,5 +1,6 @@
 # CIQ Notes
 
+The original folder/question I pulled from was js-mocha.
 Solution is in __FIRST_ATTEMPT_JAVASCRIPT folder, and is written in javascript.
 
 I decided to try this kata to try my hand at some refactoring. The general approach I've taken so far is to:
