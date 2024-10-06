@@ -120,7 +120,7 @@ describe('Gilded Rose', () => {
     { itemName: 'Backstage passes to a TAFKAL80ETC concert', itemSellIn: -2, itemQuality: -2, finalQuality: 0 }, // boundaries
   ];
   theory.forEach(x =>
-    it('should foo', () => {
+    it(`should ${x.itemName} with ${x.itemSellIn} sellIn and ${x.itemQuality} be of quality ${x.finalQuality}`, () => {
     const gildedRose = new GildedRose([new Item(x.itemName, x.itemSellIn, x.itemQuality)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(x.finalQuality);
