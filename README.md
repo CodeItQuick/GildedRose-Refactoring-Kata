@@ -1,5 +1,20 @@
 # CIQ Notes
 
+# From 2024:
+
+Funny enough, this one seems kinda easy now. 
+
+I did the following:
+1. Wrote 140 tests to ensure the functionality didn't change
+2. Refactored the production code into something reasonable
+3. Added the feature
+
+There's a fair number of latent bugs in the production code that should be cleaned up. I didn't bother, but it would pose an
+interesting problem. The code for the most part behaves as expected if you give it values you think are real, but there's weird
+behaviour in the boundaries.
+
+# From 2022:
+
 The original folder/question I pulled from was js-mocha.
 Solution is in __FIRST_ATTEMPT_JAVASCRIPT folder, and is written in javascript.
 
