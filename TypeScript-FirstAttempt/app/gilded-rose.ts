@@ -44,20 +44,29 @@ export class GildedRose {
   }
 
   private CalculateGenericItem(i: number) {
-    if (this.items[i].quality > 0) {
-      this.items[i].quality = this.items[i].quality - 1
+
+    if (this.items[i].quality <= 0) {
+      this.items[i].sellIn = this.items[i].sellIn - 1;
+      return;
     }
+
+    this.items[i].quality = this.items[i].quality - 1
     this.items[i].sellIn = this.items[i].sellIn - 1;
+
     if (this.items[i].sellIn < 0 && this.items[i].quality > 0) {
       this.items[i].quality = this.items[i].quality - 1
     }
   }
 
   private CalculateAgedBrie(i: number) {
-    if (this.items[i].quality < 50) {
-      this.items[i].quality = this.items[i].quality + 1
+    if (this.items[i].quality >= 50) {
+      this.items[i].sellIn = this.items[i].sellIn - 1;
+      return;
     }
+
+    this.items[i].quality = this.items[i].quality + 1
     this.items[i].sellIn = this.items[i].sellIn - 1;
+
     if (this.items[i].sellIn < 0 && this.items[i].quality < 50) {
       this.items[i].quality = this.items[i].quality + 1
     }
