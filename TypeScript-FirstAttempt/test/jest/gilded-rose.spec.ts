@@ -100,6 +100,35 @@ describe('Gilded Rose', () => {
     { itemName: 'Generic Item', itemSellIn: -2, itemQuality: 2, finalQuality: 0 }, // boundaries
     { itemName: 'Generic Item', itemSellIn: 2, itemQuality: -2, finalQuality: -2 }, // boundaries
     { itemName: 'Generic Item', itemSellIn: -2, itemQuality: -2, finalQuality: -2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 0, finalQuality: 0 * 2 }, // zero
+    { itemName: 'Conjured', itemSellIn: 1, itemQuality: 0, finalQuality: 0 * 2 }, // one
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 1, finalQuality: 0 * 2 }, // one
+    { itemName: 'Conjured', itemSellIn: 1, itemQuality: 1, finalQuality: 0 * 2 }, // one
+    { itemName: 'Conjured', itemSellIn: 5, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 5, finalQuality: 3 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 5, itemQuality: 5, finalQuality: 4 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 5, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 50, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 50, finalQuality: 48 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 50, itemQuality: 50, finalQuality: 49 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 49, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 49, finalQuality: 47 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 49, itemQuality: 49, finalQuality: 48 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 6, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 6, finalQuality: 4 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 6, itemQuality: 6, finalQuality: 5 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 10, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 10, finalQuality: 8 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 10, itemQuality: 10, finalQuality: 9 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 11, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: 11, finalQuality: 9 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 11, itemQuality: 11, finalQuality: 10 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: -1, itemQuality: 0, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 0, itemQuality: -1, finalQuality: -1 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: -1, itemQuality: -1, finalQuality: -1 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: -2, itemQuality: 2, finalQuality: 0 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: 2, itemQuality: -2, finalQuality: -2 * 2 }, // boundaries
+    { itemName: 'Conjured', itemSellIn: -2, itemQuality: -2, finalQuality: -2 * 2 }, // boundaries
     { itemName: 'Aged Brie', itemSellIn: -1, itemQuality: 0, finalQuality: 2 }, // boundaries
     { itemName: 'Aged Brie', itemSellIn: 0, itemQuality: -1, finalQuality: 1 }, // boundaries
     { itemName: 'Aged Brie', itemSellIn: -1, itemQuality: -1, finalQuality: 1 }, // boundaries
