@@ -20,24 +20,9 @@ export class GildedRose {
 
 
   updateQuality() {
-    type ItemType = 'Conjured' | 'Backstage' | 'Sulfuras' | 'Brie' | 'Generic';
-
     for (let i = 0; i < this.items.length; i++) {
 
       const itemName = this.items[i].name;
-
-      const itemType = (item: string): ItemType => {
-        if (this.items[i].name.includes('Conjured')) {
-          return "Conjured";
-        }
-
-        const items =
-          { 'Aged Brie': 'Brie',
-          'Sulfuras, Hand of Ragnaros': 'Sulfuras',
-          'Backstage passes to a TAFKAL80ETC concert': 'Backstage'};
-
-        return items[item] ?? 'Generic';
-      }
 
       const CalculateQuality = {
         'Generic': this.CalculateGenericItem,
@@ -46,12 +31,25 @@ export class GildedRose {
         'Backstage': this.CalculatePasses,
       }
 
-      const key = itemType(itemName);
+      const key = GildedRose.itemType(itemName);
       CalculateQuality[key]?.(i, this.items[i]);
 
     }
 
     return this.items;
+  }
+
+  private static itemType(item: string): 'Conjured' | 'Backstage' | 'Sulfuras' | 'Brie' | 'Generic' {
+    if (item.includes('Conjured')) {
+      return "Conjured";
+    }
+
+    const items =
+      { 'Aged Brie': 'Brie',
+        'Sulfuras, Hand of Ragnaros': 'Sulfuras',
+        'Backstage passes to a TAFKAL80ETC concert': 'Backstage'};
+
+    return items[item] ?? 'Generic';
   }
 
   private CalculateGenericItem(i: number, item: any) {
