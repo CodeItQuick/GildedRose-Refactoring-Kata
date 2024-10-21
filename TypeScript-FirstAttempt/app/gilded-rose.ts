@@ -22,7 +22,7 @@ export class GildedRose {
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
 
-      const itemName = this.items[i].name;
+      const item = this.items[i];
 
       const CalculateQuality = {
         'Generic': this.CalculateGenericItem,
@@ -31,8 +31,8 @@ export class GildedRose {
         'Backstage': this.CalculatePasses,
       }
 
-      const key = GildedRose.itemType(itemName);
-      CalculateQuality[key]?.(i, this.items[i]);
+      const key = GildedRose.itemType(item.name);
+      CalculateQuality[key]?.(item);
 
     }
 
@@ -52,19 +52,22 @@ export class GildedRose {
     return items[item] ?? 'Generic';
   }
 
-  private CalculateGenericItem(i: number, item: any) {
+  private CalculateGenericItem(item: any) {
+    item.sellIn -= 1;
+
+    // Quality Adjustment
     if (item.quality <= 0) {
-      item.sellIn = item.sellIn - 1;
       return;
     }
-
-    item.quality = item.quality - 1
-    item.sellIn = item.sellIn - 1;
-    if (item.sellIn < 0 && item.quality > 0) {
-      item.quality = item.quality - 1
+    item.quality -= 1;
+    if (item.quality <= 0) {
+      return;
+    }
+    if (item.sellIn < 0) {
+      item.quality -= 1;
     }
   }
-  private CalculateConjured(i: number, item: any) {
+  private CalculateConjured(item: any) {
     if (item.quality <= 0) {
       item.sellIn = item.sellIn - 1;
       item.quality = item.quality * 2;
@@ -80,7 +83,7 @@ export class GildedRose {
 
   }
 
-  private CalculateAgedBrie(i: number, item: any) {
+  private CalculateAgedBrie(item: any) {
     if (item.quality >= 50) {
       item.sellIn = item.sellIn - 1;
       return;
@@ -93,7 +96,7 @@ export class GildedRose {
     }
   }
 
-  private CalculatePasses(i: number, item: any) {
+  private CalculatePasses(item: any) {
     if (item.quality < 50) {
       item.quality = item.quality + 1
     }
